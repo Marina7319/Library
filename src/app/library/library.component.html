@@ -1,0 +1,14 @@
+
+  <h1 class="heading">Charles Dickens books</h1>
+  <div *ngFor="let result of results">
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <h4>{{result['title']}}</h4>
+        <p>Bookshelves:<span>{{result['bookshelves']}}</span></p>
+        <p>Media type:<span>{{result['subjects']}}</span></p>
+        <p>Downloads:<span>{{ result['download_count'] }}</span></p>
+        <p>Language:<span>{{ result['languages'] }}</span></p>
+        <span class="badge bg-primary rounded-pill">{{result['id']}}</span>
+      </li>
+    </ul>
+    </div>

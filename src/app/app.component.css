@@ -1,0 +1,60 @@
+html 
+{ 
+    box-sizing: border-box;
+}
+*, 
+*:before, *:after
+{
+    box-sizing:inherit;
+}
+
+.library 
+{ 
+   
+   align-items: center;
+   align-content: center;
+   text-align: center;
+   padding: 20px;
+   width: 105%;
+   margin: 15px;
+   color: darkblue;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   width: 76%; /*SPECIFY WIDTH HERE*/
+   display: inline-block;
+
+}
+
+h3 
+{
+
+    color: blue;
+    font-weight: 600;
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 15px;
+
+}
+span 
+{ 
+
+    color:darkcyan;
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 8px;
+   
+}
+.book-list 
+{ 
+
+    list-style: none;
+    text-transform: none;
+    box-shadow: 0px 10px 25px -9px rgba(0,0,0,0.75);
+    border-radius: 12px;
+    padding: 22px;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 11px;
+
+}
+
+  

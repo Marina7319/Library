@@ -1,0 +1,9 @@
+form
+{
+    padding : 10px;
+    margin: 10px;
+}
+.mb-3, legend, .mb-3 .form-text, .mb-3 alert, .btn , .alert, .form-text, .form-label
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
