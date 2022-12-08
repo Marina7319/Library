@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanDeactivate, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
+import { CanDeactivate } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +8,9 @@ import { LoginComponent } from './login/login.component';
 export class Unsaved implements CanDeactivate<LoginComponent> {
 
   constructor() { }
-  canDeactivate(component: LoginComponent){
-    if(component.form.dirty) { 
+
+  canDeactivate(component: LoginComponent) {
+    if (component.form.dirty) {
       return confirm("Are you sure?");
     }
     return true;

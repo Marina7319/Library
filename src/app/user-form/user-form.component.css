@@ -4,7 +4,8 @@ h1 , .form-label, .alert alert-danger, .form-text ,
 { 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.user, .submit, .email, .country { 
+.user, .submit, .email, .country 
+{ 
     color:dodgerblue;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

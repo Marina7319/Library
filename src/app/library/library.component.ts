@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { OpenLibraryService } from '../open-library.service';
 
 @Component({
@@ -6,22 +6,19 @@ import { OpenLibraryService } from '../open-library.service';
   templateUrl: './library.component.html',
   styleUrls: ['./library.component.css']
 })
-export class LibraryComponent implements OnInit {
-  results:any = [];
+export class LibraryComponent {
+  results: any = [];
 
   isLoading = false;
 
-  constructor(private openLibraryService: OpenLibraryService) {
-
-}
+  constructor(private openLibraryService: OpenLibraryService) { }
   ngOnInit() {
     this.openLibraryService.getOpenLibraryData()
-    .subscribe(data => {
-      this.isLoading = false;
-      this.results = data.results;
-      console.log(this.results);
-    });
+      .subscribe(data => {
+        this.isLoading = false;
+        this.results = data.results;
+        console.log(this.results);
+      });
   }
-
 
 }

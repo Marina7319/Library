@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate } from '@angular/router';
-import { from } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,6 +13,7 @@ export class LoginService {
       this.isLoggedIn = false;
     return this.isLoggedIn;
   }
+
   logout() {
     this.isLoggedIn = false;
     return this.isLoggedIn;

@@ -1,13 +1,6 @@
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 <app-spinner></app-spinner>
-<div *ngIf="isLoading"> 
-  <i class="icon-spinner"></i>
-  <i class="fa fa-spinner"></i>
-   <div class="spinner-border m-5" role="status">
-    <span class="sr-only">Loading...</span>
-  </div>
-</div>
 <login></login>
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
@@ -16,8 +9,7 @@
     <li class="breadcrumb-item"><a routerLink="signup" routerLinkActive="active"> Sign Up</a></li>
     <li class="breadcrumb-item"><a routerLink="book" routerLinkActive="active">Book Shelve</a></li>
     <li class="breadcrumb-item"><a routerLink="addBook" routerLinkActive="active">Add Book</a></li>
-    <!-- <li class="breadcrumb-item active" aria-current="page">Data</li> -->
-  </ol>
+ </ol>
 </nav>
 <router-outlet></router-outlet>
 

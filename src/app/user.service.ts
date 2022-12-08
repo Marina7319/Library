@@ -14,7 +14,6 @@ export class UserService {
 private baseUrl: string;
 
   constructor(private http: HttpClient,
-   // private userStore: UserStoreService,
     @Optional() @Inject(APP_BASE_HREF) orgin: string) {
       this.baseUrl = `${origin}/api/book`;
      }

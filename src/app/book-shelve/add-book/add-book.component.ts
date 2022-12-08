@@ -1,7 +1,6 @@
 import { Book } from 'src/app/book';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
-
 
 @Component({
   selector: 'app-add-book',
@@ -11,11 +10,9 @@ import { FormControl } from '@angular/forms';
 export class AddBookComponent {
   public nameControl = new FormControl();
   public book!: Book;
-  constructor() {
-    //this.book = new Book('test', '', 0, 0);
-  }
+  constructor() { }
 
-  onSubmit() { 
+  onSubmit() {
     console.log('Name Control Value', this.nameControl)
   }
 }

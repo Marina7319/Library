@@ -9,21 +9,19 @@ import { FormControl } from '@angular/forms';
   providers: [OpenLibraryService]
 })
 export class AppComponent {
- searchControl = new FormControl();
-  results:any = [];
+  searchControl = new FormControl();
+  results: any = [];
 
   isLoading = false;
 
-  constructor(private openLibraryService: OpenLibraryService) {
-
-}
+  constructor(private openLibraryService: OpenLibraryService) { }
+  
   ngOnInit() {
     this.openLibraryService.getOpenLibraryData()
-    .subscribe(data => {
-      this.isLoading = false;
-      this.results = data.results;
-      console.log(this.results);
-    });
+      .subscribe(data => {
+        this.isLoading = false;
+        this.results = data.results;
+        console.log(this.results);
+      });
   }
-
 }

@@ -8,16 +8,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 
-
 @NgModule({
-  declarations: [LibraryComponent,
-  ResultComponent],
+  declarations: [
+    LibraryComponent, 
+    ResultComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule
-    
   ],
   providers: [
     LibraryService

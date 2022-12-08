@@ -12,12 +12,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { LoadingInterceptor } from './loading.interceptor';
 import { ShelveComponent } from './book-shelve/shelve.component';
 import { AddBookComponent } from './book-shelve/add-book/add-book.component';
-import { environment } from 'src/environments/environment';
-import { AngularFireModule } from 'angularfire2';
-
+import { LoadingInterceptor } from './loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,7 +25,6 @@ import { AngularFireModule } from 'angularfire2';
     SpinnerComponent,
     AddBookComponent,
     ShelveComponent
-
   ],
   imports: [
     BrowserModule,
@@ -39,11 +35,18 @@ import { AngularFireModule } from 'angularfire2';
     libraryRouting,
     ReactiveFormsModule,
     routing,
-    BrowserAnimationsModule,
-    AngularFireModule
+    BrowserAnimationsModule
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+

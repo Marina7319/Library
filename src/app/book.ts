@@ -7,14 +7,13 @@ export class Book {
         public price: number,
         public previousPrice: number) {
         this.notableItems = [];
-        }
-
-        isPositiveChange(): boolean {
-            return this.price >= this.previousPrice;
-        }
     }
+    isPositiveChange(): boolean {
+        return this.price >= this.previousPrice;
+    }
+}
 
-export class Person { 
+export class Person {
     name!: string;
     title!: string;
 }

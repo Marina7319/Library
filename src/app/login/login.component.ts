@@ -2,36 +2,37 @@ import { PasswordValidator } from './../passwordValidator';
 import { LoginService } from './../login.service';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent  {
+export class LoginComponent {
   form: FormGroup;
-  constructor(fb: FormBuilder, private loginService: LoginService) { 
+  constructor(fb: FormBuilder, private loginService: LoginService) {
     this.form = fb.group({
-      username:['', Validators.required],
-      password:['', Validators.compose([Validators.required, PasswordValidator.cannotContainSpace])]
+      username: ['', Validators.required],
+      password: ['', Validators.compose([Validators.required, PasswordValidator.cannotContainSpace])]
     })
   }
-  login() { 
+  
+  login() {
     var result = this.loginService.login(this.form.controls['username'].value,
-    this.form.controls['password'].value);
+      this.form.controls['password'].value);
 
-    if(!result){
+    if (!result) {
       this.form.controls['password'].setErrors({
         invalidLogin: true
       });
     }
   }
 
-  logout() { 
+  logout() {
     var result = this.loginService.logout();
 
-    if(!result){
+    if (!result) {
       this.form.controls['password'].setErrors({
         invalidLogin: true
       });
