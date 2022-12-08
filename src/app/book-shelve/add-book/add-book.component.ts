@@ -10,7 +10,9 @@ import { FormControl } from '@angular/forms';
 export class AddBookComponent {
   public nameControl = new FormControl();
   public book!: Book;
-  constructor() { }
+  constructor() {
+    this.book = new Book('test', '', 0, 0);
+   }
 
   onSubmit() {
     console.log('Name Control Value', this.nameControl)

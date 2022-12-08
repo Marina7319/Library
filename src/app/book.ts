@@ -14,6 +14,6 @@ export class Book {
 }
 
 export class Person {
-    name!: string;
     title!: string;
+    name!: string;
 }

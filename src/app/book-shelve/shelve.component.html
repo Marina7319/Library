@@ -1,11 +1,11 @@
 <h2>Create Book Shelve</h2>
+
 <div class="form-group">
-    <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="bookForm" (ngSubmit)="createStock()">
         <div class="book-name">
-            <p>Book title:</p>
             <input type="text"
             placeholder="Book Name"
-            name="bookName"
+            name="bookTitle"
             formControlName="name">
             <div *ngIf="bookForm.get('name').invalid &&
             ( bookForm.get('name').dirty ||
@@ -13,10 +13,10 @@
         Name is required</div>
         </div>
         <div class="book-id">
-            <p>Book id:</p>
             <input type="text"
             placeholder="Book Id"
-            formControlName = "id">
+            name="bookId"
+            formControlName = "bookId">
             <div *ngIf="bookForm.get('id').invalid &&
             ( bookForm.get('id').dirty ||
             bookForm.get('id').touched )">
@@ -29,10 +29,10 @@
         </div>
         </div>
         <div class="book-price">
-            <p>Book price:</p>
             <input type="number"
             placeholder="Book price"
-            formContrlName="price">
+            name="bookPrice"
+            formContrlName="setStockPrice($event)">
             <div *ngIf="bookForm.get('price').invalid &&
             ( bookForm.get('price').dirty ||
             bookForm.get('price').touched )">
@@ -44,7 +44,6 @@
         </div>
     </div>
 </div>
-
 <div class="form-group">
     <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
 <div formArrayName="notableItems">
@@ -59,11 +58,16 @@
         placeholder="Book name"
         formControlName="name">
     </div>
-<div>
+    <div>
     <input type="text"
     placeholder="Book Title"
     formControlName = "title">
     </div>
+    <div>
+        <input type="number"
+        placeholder="Book price"
+        formControlName = "price">
+        </div>
     <button type="button" (click)="removeNotableBook(i)">
         Remove Item
     </button>
@@ -80,7 +84,7 @@ Reset
 </button>
     </form>
 </div>
-        <!-- <button type="submit">Submit</button>
+        <button type="submit">Submit</button>
         <button type="button" (click)="resetForm()">
             Reset
         </button>
@@ -92,7 +96,7 @@ Reset
     Patch Book Form
     </button>
     </form>
-</div> -->
+</div>
 <p>Form Control value: {{ bookForm.value | json }}</p>
 <p>Form Control status: {{ bookForm.status | json }}</p>
 <p>Book Value: {{ book | json }}</p>

@@ -4,12 +4,12 @@
     <input class="form-control me-auto" type="text" 
     placeholder="Add your book name..."
      aria-label="Add your item here..."
-     [ngModel]="book.bookTitle"
-     (ngModelChange)="book.bookTitle=$event">
+     name = "bookTitle"
+     [(ngModel)]="book.bookTitle">
      </div>
-     </form>
-    <button type="button" class="btn btn-secondary" 
-    (click)="book.bookTitle='test'">Reset Book Name</button>
-    <div class="vr"></div>
-  </div>
-  <h4>Book Title is {{book.bookTitle}}</h4>
+  </form>
+  <button type="button" class="btn btn-secondary" 
+  (click)="book.bookTitle='test'">Reset Book Name</button>
+  <div class="vr"></div>
+</div>
+<h4>Book Title is {{book.bookTitle}}</h4>
