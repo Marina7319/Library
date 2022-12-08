@@ -16,6 +16,7 @@ import { LoadingInterceptor } from './loading.interceptor';
 import { ShelveComponent } from './book-shelve/shelve.component';
 import { AddBookComponent } from './book-shelve/add-book/add-book.component';
 import { environment } from 'src/environments/environment';
+import { AngularFireModule } from 'angularfire2';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { environment } from 'src/environments/environment';
     libraryRouting,
     ReactiveFormsModule,
     routing,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireModule
   ],
   providers: [
   ],
