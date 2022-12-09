@@ -1,52 +1,54 @@
 <div class="container">
   <h1>User Form</h1>
-<form (ngSubmit)="onSubmit()" #userForm="ngForm">
+  <form (ngSubmit)="onSubmit()" #userForm="ngForm">
   <div class="mb-3">
-    <label for="firstName" class="form-label">First name:</label>
-    <input type="text" class="form-control" id="firstName" aria-describedby="emailHelp" required
-    [(ngModel)]="model.firstName" name="firstName" 
-    #firstName="ngModel" 
-    minlength="3">
-    <div class="alert alert-danger" 
-    *ngIf="firstName.touched && firstName.errors">
-    <div class="alert alert-danger"
-    *ngIf="firstName.errors.required">
-    First name is required.</div>
-    <div id="emailHelp" class="form-text"
-    *ngIf="firstName.errors.minlength">
-    First name should be minimum 3 characters.</div>
-  </div>
-  </div>
-  <div class="mb-3">
-    <label for="email" class="form-label">Email address:</label>
-    <input type="text" class="form-control" id="email" aria-describedby="emailHelp" required
-    [(ngModel)]="model.email" name="email"
-    #email="ngModel" minlength="3">
-    <div *ngIf="email.touched && email.errors">
-      <div  class="alert alert-danger" *ngIf="email.errors.required">Email is required.</div>
-      <div class="alert alert-danger" *ngIf="email.errors.minlength">
-        Email should be minimum 3 characters.
-      </div>
-    </div>
+     <label for="firstName" class="form-label">First name:</label>
+     <input type="text" class="form-control" id="firstName" aria-describedby="emailHelp" required
+     [(ngModel)]="model.firstName" name="firstName" 
+     #firstName="ngModel" 
+     minlength="3">
+     <div class="alert alert-danger" 
+        *ngIf="firstName.touched && firstName.errors">
+        <div class="alert alert-danger"
+           *ngIf="firstName.errors.required">
+           First name is required.
+        </div>
+        <div id="emailHelp" class="form-text"
+           *ngIf="firstName.errors.minlength">
+           First name should be minimum 3 characters.
+        </div>
+     </div>
   </div>
   <div class="mb-3">
-    <label for="country" class="form-label">Country:</label>
-    <select class="form-control" id="country"
-    [(ngModel)]="model.country" name="country">
-    <option *ngFor="let c of countries"
-    [value]="c">{{c}}</option>
-  </select>
-</div>
-<button type="submit" class="btn btn-primary"
-[disabled]="!userForm.form.valid">Submit</button>
-</form>
-<div [hidden]="!submitted">
-    <p class="submit"> You submitted the following:</p>
-    <p class="user">  First Name: {{ model.firstName }}</p>
-    <br>
-    <p class="email">   Email: {{ model.email }}</p>
-    <br>
-    <p class="country">   Country: {{ model.country }}</p>
-    <br>
-    <button class="btn btn-default" (click)="submitted=false">Remove</button>
-</div>
+     <label for="email" class="form-label">Email address:</label>
+     <input type="text" class="form-control" id="email" aria-describedby="emailHelp" required
+     [(ngModel)]="model.email" name="email"
+     #email="ngModel" minlength="3">
+     <div *ngIf="email.touched && email.errors">
+        <div  class="alert alert-danger" *ngIf="email.errors.required">Email is required.</div>
+        <div class="alert alert-danger" *ngIf="email.errors.minlength">
+           Email should be minimum 3 characters.
+        </div>
+     </div>
+  </div>
+  <div class="mb-3">
+     <label for="country" class="form-label">Country:</label>
+     <select class="form-control" id="country"
+     [(ngModel)]="model.country" name="country">
+     <option *ngFor="let c of countries"
+     [value]="c">{{c}}</option>
+     </select>
+  </div>
+  <button type="submit" class="btn btn-primary"
+     [disabled]="!userForm.form.valid">Submit</button>
+  </form>
+  <div [hidden]="!submitted">
+     <p class="submit"> You submitted the following:</p>
+     <p class="user">  First Name: {{ model.firstName }}</p>
+     <br>
+     <p class="email">   Email: {{ model.email }}</p>
+     <br>
+     <p class="country">   Country: {{ model.country }}</p>
+     <br>
+     <button class="btn btn-default" (click)="submitted=false">Remove</button>
+  </div>
