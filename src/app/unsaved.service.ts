@@ -10,9 +10,9 @@ export class Unsaved implements CanDeactivate<LoginComponent> {
   constructor() { }
 
   canDeactivate(component: LoginComponent) {
-    if (component.form.dirty) {
+    if (component.form.dirty)
       return confirm("Are you sure?");
-    }
+  
     return true;
   }
 }

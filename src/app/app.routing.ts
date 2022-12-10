@@ -6,12 +6,13 @@ import { AuthGuard } from './auth-guard.service';
 import { ShelveComponent } from './book-shelve/shelve.component';
 import { AddBookComponent } from './book-shelve/add-book/add-book.component';
 import { HomeComponent } from './home/home.component';
+import { Unsaved } from './unsaved.service';
 
 export const routing = RouterModule.forRoot([
     { path: 'book', component: ShelveComponent, canActivate:[AuthGuard]},
     { path: 'addBook', component: AddBookComponent, canActivate:[AuthGuard]},
-    {path: 'signup', component: LoginComponent},
-    {path: 'register', component: UserFormComponent},
-    {path: '', component: HomeComponent},
+    { path: 'signup', component: LoginComponent, canDeactivate: [Unsaved]},
+    { path: 'register', component: UserFormComponent},
+    { path: '', component: HomeComponent},
     { path: '**', component: NotfoundComponent }
 ]);
