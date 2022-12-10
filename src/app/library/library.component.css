@@ -1,19 +1,17 @@
-.list-group 
-{ 
+.list-group {
 
-    list-style: none;
-    text-transform: none;
-    padding: 22px;
-    padding: 11px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color:lightblue;
-    border: 4px solid blue;
+  list-style: none;
+  text-transform: none;
+  padding: 22px;
+  padding: 11px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: lightblue;
+  border: 4px solid blue;
 
 }
 
-.heading 
-{ 
-    padding: 16px;
-    margin: 30px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+.heading {
+  padding: 16px;
+  margin: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

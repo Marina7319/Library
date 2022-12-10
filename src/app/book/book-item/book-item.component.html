@@ -1,0 +1,12 @@
+<div class="book-container">
+    <div class="name">{{book.bookTitle + ' (' + book.id + ')'}}</div>
+    <div class="exchange">{{book.exchange}}</div>
+    <div class="price" [class.positive]="book.price > book.previousPrice"
+    [class.negative]="book.price <= book.previousPrice">${{book.price}}
+ </div>
+ <button (click)="onToggleFavorite($event)"
+ *ngIf="!book.favorite">Add to Favorite</button>
+ <button (click)="onToggleFavorite($event)"
+ *ngIf="book.favorite">Remove from Favorite</button>
+ </div>
+ <ng-content></ng-content>

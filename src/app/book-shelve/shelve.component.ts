@@ -11,15 +11,12 @@ export class ShelveComponent {
   counter = 1;
   public book!: Book;
   public bookForm!: FormGroup;
+  public confirmed = false;
   constructor(private fb: FormBuilder) {
     this.createForm();
-    // this.book = new Book('Test' + this.counter++, 'TST', 20, 10);
+    this.book = new Book('Test' + this.counter++, 'BOOK', 20, 10, 0);
   }
 
-  // patchBookForm() { 
-  //   this.book = new Book(`Test ${counter++}`, 'TST', 20, 10);
-  //   this.bookForm.patchValue(this.book);
-  // }
   createForm() {
     this.bookForm = this.fb.group({
       name: [null, Validators.required],
@@ -29,13 +26,21 @@ export class ShelveComponent {
     });
   }
 
-  setBookPrice(price:any) { 
+  setBookPrice(price: any) {
     this.book.price = price;
     this.book.previousPrice = price;
   }
-  createBook() {
+
+  createBook(bookForm: any) {
     console.log('Creatting book', this.book);
+    if (bookForm.valid) {
+      console.log('Creating book ', this.book);
+    }
+    else {
+      console.error('Book form is in an invalid state');
+    }
   }
+
   get notableItems(): FormArray {
     return this.bookForm.get('notableItems') as FormArray;
   }
@@ -46,23 +51,28 @@ export class ShelveComponent {
       title: ['', Validators.required]
     }))
   }
+
   removeNotableBook(index: number) {
     this.notableItems.removeAt(index);
   }
+
   loadBookFromServer() {
-    this.book = new Book('Test' + this.counter++, 'TST', 20, 10);
+    this.book = new Book('Test' + this.counter++, 'BOOK', 20, 10, 0);
     let bookFormModel = Object.assign({}, this.book);
     delete bookFormModel.previousPrice;
     delete bookFormModel.favorite;
     this.bookForm.setValue(bookFormModel);
   }
+
   patchBookForm() {
-    this.book = new Book(`Test ${this.counter++}`, 'TST', 20, 10);
+    this.book = new Book(`Test ${this.counter++}`, 'BOOK', 20, 10, 0);
     this.bookForm.patchValue(this.book);
   }
+
   resetForm() {
     this.bookForm.reset();
   }
+
   onSubmit() {
     this.book = Object.assign({}, this.bookForm.value);
     console.log('Saving book', this.book);

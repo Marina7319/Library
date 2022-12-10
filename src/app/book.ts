@@ -5,6 +5,7 @@ export class Book {
     constructor(public bookTitle: string,
         public id: string,
         public price: number,
+        public exchange: any,
         public previousPrice: number) {
         this.notableItems = [];
     }
@@ -17,3 +18,4 @@ export class Person {
     title!: string;
     name!: string;
 }
+

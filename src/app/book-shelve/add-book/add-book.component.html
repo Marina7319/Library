@@ -1,13 +1,13 @@
 <div class="form-group">
-  <form>
-     <div class="book-name">
-        <input class="form-control me-auto" type="text" placeholder="Add your book name..."
-        aria-label="Add your item here..." name = "bookTitle" [(ngModel)]="book.bookTitle">
-     </div>
-  </form>
-  <button type="button" class="btn btn-secondary" (click)="book.bookTitle='test'">
-  Reset Book Name
-  </button>
-  <div class="vr"></div>
+   <form>
+      <div class="book-name">
+         <input class="form-control me-auto" type="text" placeholder="Add your book name..."
+         aria-label="Add your item here..." name = "bookTitle" [(ngModel)]="book.bookTitle">
+      </div>
+   </form>
+   <button type="button" class="btn btn-secondary" (click)="book.bookTitle='test'">
+   Reset Book Name
+   </button>
+   <div class="vr"></div>
 </div>
 <h4>Book Title is {{book.bookTitle}}</h4>

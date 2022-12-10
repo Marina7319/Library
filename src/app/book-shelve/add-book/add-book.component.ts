@@ -11,8 +11,8 @@ export class AddBookComponent {
   public nameControl = new FormControl();
   public book!: Book;
   constructor() {
-    this.book = new Book('test', '', 0, 0);
-   }
+    this.book = new Book('test', '', 0, 0, 0);
+  }
 
   onSubmit() {
     console.log('Name Control Value', this.nameControl)

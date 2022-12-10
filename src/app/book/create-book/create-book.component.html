@@ -1,0 +1,48 @@
+<h2>Create Book Form</h2>
+<h3>App level: {{messageService.message}}</h3>
+<div>{{messageService.message}}</div>
+<app-book-list></app-book-list>
+<div class="form-group">
+   <form (ngSubmit)="creatBook(bookForm)" #bookForm="ngForm">
+   <div class="book-name">
+      <input type="text" 
+      placeholder ="Book Name" 
+      required
+      name="bookName" 
+      #stockName="ngModel"
+      [(ngModel)]="book.bookTitle">
+   </div>
+   <div class="book-code">
+      <input type="text" placeholder="Book Id"
+      name="bookId" [(ngModel)]="book.id">
+   </div>
+   <div class="book-code">
+      <input type="number" placeholder="Book Price"
+      name="bookPrice" [(ngModel)]="book.price"
+      (ngModelChange) = "setBookPrice($event)">
+   </div>
+   <div class="book-exchange">
+      <div>
+         <input type="radio" 
+         name="bookExchange" [(ngModel)]="book.exchange"
+         value= "BOOK">BOOK
+      </div>
+      <div>
+         <input type="radio" name="bookExchange"
+         [(ngModel)]="book.exchange" value="MAGAZINE">MAGAZINE
+      </div>
+      <div>
+         <input type="radio" name="bookExchange"
+         [(ngModel)]="book.exchange" value="OTHER">OTHER
+      </div>
+   </div>
+   <div class="book-confirm">
+      <input type="checkbox" name="bookConfirm"
+      [(ngModel)]="confirmed">
+      I confirm that the information provided above is accurate!
+   </div>
+   <button [disabled]="!confirmed" type="submit">Create</button>
+   </form>
+</div>
+<h4>Stock Name is {{book | json}}</h4>
+<h4>Data has been confirmed: {{confirmed}}</h4>

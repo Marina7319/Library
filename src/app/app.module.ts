@@ -15,6 +15,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ShelveComponent } from './book-shelve/shelve.component';
 import { AddBookComponent } from './book-shelve/add-book/add-book.component';
 import { LoadingInterceptor } from './loading.interceptor';
+import { BookListComponent } from './book-list/book-list.component';
+import { BookService } from './services/book.service';
+import { CreateBookComponent } from './book/create-book/create-book.component';
+import { BookItemComponent } from './book/book-item/book-item.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,10 @@ import { LoadingInterceptor } from './loading.interceptor';
     LoginComponent,
     SpinnerComponent,
     AddBookComponent,
-    ShelveComponent
+    ShelveComponent,
+    BookItemComponent,
+    CreateBookComponent,
+    BookListComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +49,8 @@ import { LoadingInterceptor } from './loading.interceptor';
       provide: HTTP_INTERCEPTORS,
       useClass: LoadingInterceptor,
       multi: true
-    }
+    },
+    BookService
   ],
   bootstrap: [AppComponent]
 })
