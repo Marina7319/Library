@@ -10,7 +10,7 @@ export class OpenLibraryService {
   constructor(private http: HttpClient) { }
 
   getOpenLibraryData() {
-    return this.http.get("https://gutendex.com/books")
+    return this.http.get("https://gutendex.com/books/?search=")
       .pipe(map(res => JSON.parse(JSON.stringify(res))));
   }
 }

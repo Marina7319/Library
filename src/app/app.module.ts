@@ -15,7 +15,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ShelveComponent } from './book-shelve/shelve.component';
 import { AddBookComponent } from './book-shelve/add-book/add-book.component';
 import { LoadingInterceptor } from './loading.interceptor';
-import { BookSearchComponent } from './book-search/book-search.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +24,7 @@ import { BookSearchComponent } from './book-search/book-search.component';
     LoginComponent,
     SpinnerComponent,
     AddBookComponent,
-    ShelveComponent,
-    BookSearchComponent
+    ShelveComponent
   ],
   imports: [
     BrowserModule,

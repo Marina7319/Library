@@ -24,4 +24,5 @@ export class AppComponent {
         console.log(this.results);
       });
   }
+
 }
