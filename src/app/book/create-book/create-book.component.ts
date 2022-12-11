@@ -28,10 +28,10 @@ export class CreateBookComponent {
   creatBook(bookForm: any) {
     if (bookForm.valid) {
       let created = this.bookService.createBook(this.book);
-      if (created) {
+      if (created !== null) {
         this.message = 'Successfully created book with book id: '
           + this.book.id;
-        this.book = new Book('', '', 0, 0, 2);
+        this.book = new Book('', '', 0, 0, 0);
       } else {
         this.message = 'Book with book id: ' + this.book.id
           + ' already exists';

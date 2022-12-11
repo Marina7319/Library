@@ -15,6 +15,7 @@ import { CreateBookComponent } from './book/create-book/create-book.component';
 export const routing = RouterModule.forRoot([
     { path: 'book', component: ShelveComponent, canActivate:[AuthGuard]},
     { path: 'addBook', component: AddBookComponent, canActivate:[AuthGuard]},
+    { path: 'listBook', component: BookListComponent, canActivate:[AuthGuard]},
     { path: 'signup', component: LoginComponent, canDeactivate: [Unsaved]},
     { path: 'register', component: UserFormComponent},
     { path: 'addTitle', component: CreateBookComponent},

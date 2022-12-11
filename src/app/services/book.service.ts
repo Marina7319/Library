@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Book } from '../book';
+
 
 @Injectable({
   providedIn: 'root'
@@ -32,5 +34,13 @@ export class BookService {
     foundBook.favorite = !foundBook.favorite;
   }
 
+}
+
+  function ObservableThrow(arg0: { msg: string; }, arg1: number) {
+    throw new Error('Function not implemented.');
+  }
+
+function ObservableOf(arg0: { msg: string; }) {
+  throw new Error('Function not implemented.');
 }
 
