@@ -4,6 +4,7 @@ import { FormControl } from '@angular/forms';
 import { Book } from './book';
 import { MessageService } from './services/message.service';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -59,7 +60,8 @@ export class AppComponent implements OnInit, OnChanges,
   isLoading = false;
 
   constructor(private openLibraryService: OpenLibraryService,
-    public messageService: MessageService) { }
+    public messageService: MessageService) {
+  }
 
   ngOnInit() {
     this.openLibraryService.getOpenLibraryData()
@@ -68,7 +70,7 @@ export class AppComponent implements OnInit, OnChanges,
         this.results = data.results;
         console.log(this.results);
       });
-    this.messageService.message = 'Hello Message Service';
+    this.messageService.message = 'Message Service';
   }
 
   testMethod() {

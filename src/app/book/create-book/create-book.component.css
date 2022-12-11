@@ -1,0 +1,21 @@
+html {
+  box-sizing: border-box;
+}
+
+.form-group {
+  height: 200px;
+  position: relative;
+  border: 3px solid green;
+}
+
+
+.form-group .book-name,
+.form-group .book-code,
+.form-group .book-exchange,
+.form-group .book-confirm,
+h2,
+h3,
+div,
+h4 {
+  text-align: center;
+}

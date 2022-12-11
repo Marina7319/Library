@@ -7,3 +7,12 @@ form
 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.mb-3, legend  { 
+    width: 30%;
+}
+
+.btn  {
+
+    width: 10%;
+}
